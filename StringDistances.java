@@ -44,10 +44,13 @@
 
 package fr.inrialpes.exmo.ontosim.string;
 
-import java.util.Vector;
-
 import org.ivml.alimo.ISub;
 
+import java.util.Vector;
+
+/**
+ * class StringDistances
+ */
 public class StringDistances {
 
     /*
