@@ -1,7 +1,7 @@
 /**
  *   Copyright 2008, 2009 INRIA, Université Pierre Mendès France
  *   
- *   Matrix.java is part of OntoSim.
+ *   VectorMeasure.java is part of OntoSim.
  *
  *   OntoSim is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Lesser General Public License as published by
@@ -18,28 +18,25 @@
  *   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  *
  */
-package fr.inrialpes.exmo.ontosim.util.matrix;
+package fr.inrialpes.exmo.ontosim.vector;
 
-import java.util.Set;
+import fr.inrialpes.exmo.ontosim.Measure;
 
 /**
- *
- * @param <R>
- * @param <C>
+ * abstract class VectorMeasure
  */
-public interface Matrix<R,C> {
+public abstract class VectorMeasure implements Measure<double[]>{
 
-    public void put(R r, C c, double value);
-    public double get(R r, C c);
-    public Set<R> getDimR();
-    public Set<C> getDimC();
-    public Set<?> keySet();
-    
-    public boolean containsRdim(R r);
-    public boolean containsCdim(C c);
 
-    public MatrixDoubleArray<R, C> toArray();
-    public MatrixDoubleArray<C, R> toArrayT();
-    
-    public void putAll(Matrix<R, C> m);
+	public VectorMeasure() {
+	}
+
+	/**
+	 *
+	 * @param v1
+	 * @param v2
+	 * @return
+	 */
+	public abstract double getMeasureValue(double[] v1, double[] v2);
+
 }
