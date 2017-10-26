@@ -31,16 +31,61 @@ import java.util.Set;
  */
 public interface Entity<E> {
 
+	/**
+	 *
+	 * @return
+	 */
 	public URI getURI();
-	public Set<String> getLabels(String lang);
-	public Set<String> getComments(String lang);
-	public LoadedOntology<E> getOntology();
-	public Set<String> getAnnotations(String lang);
-	public E getObject();
 
+	/**
+	 *
+	 * @param lang
+	 * @return
+	 */
+	public Set<String> getLabels(String lang);
+
+	/**
+	 *
+	 * @param lang
+	 * @return
+	 */
+	public Set<String> getComments(String lang);
+
+	/**
+	 *
+	 * @return
+	 */
+	public LoadedOntology<E> getOntology();
+
+	/**
+	 *
+	 * @param lang
+	 * @return
+	 */
+	public Set<String> getAnnotations(String lang);
+
+	/**public E getObject();
+	 *
+	 * @return
+	 */
 	public boolean isClass();
+
+	/**
+	 *
+	 * @return
+	 */
 	public boolean isProperty();
-	public boolean isDataProperty();
+
+	/**public boolean isDataProperty();
+	 *
+	 * @return
+	 */
+
 	public boolean isObjectProperty();
+
+	/**
+	 *
+	 * @return
+	 */
 	public boolean isIndividual();
 }
