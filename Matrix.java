@@ -1,7 +1,7 @@
 /**
  *   Copyright 2008, 2009 INRIA, Université Pierre Mendès France
  *   
- *   Cardinality.java is part of OntoSim.
+ *   Matrix.java is part of OntoSim.
  *
  *   OntoSim is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Lesser General Public License as published by
@@ -18,32 +18,28 @@
  *   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  *
  */
-package fr.inrialpes.exmo.ontosim.extractor.matching;
+package fr.inrialpes.exmo.ontosim.util.matrix;
 
-// To be changed
+import java.util.Set;
 
 /**
- * class Cardinality
+ *
+ * @param <R>
+ * @param <C>
  */
-public class Cardinality {
-    protected  enum Role {
-	ZERO_ONE ("0,1"),
-	ZERO_MANY ("0,n"),
-	ONE_ONE ("1,1"),
-	ONE_MANY ("1,n"),
-	MANY_MANY ("n,m");
-	
-	private final String value;
-	
-	Role(String v ) {
-	    value=v;
-	}
-	
-	public String toString() {
-	    return value;
-	}
-    }
+public interface Matrix<R,C> {
+
+    public void put(R r, C c, double value);
+    public double get(R r, C c);
+    public Set<R> getDimR();
+    public Set<C> getDimC();
+    public Set<?> keySet();
     
+    public boolean containsRdim(R r);
+    public boolean containsCdim(C c);
+
+    public MatrixDoubleArray<R, C> toArray();
+    public MatrixDoubleArray<C, R> toArrayT();
     
-    
+    public void putAll(Matrix<R, C> m);
 }

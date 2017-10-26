@@ -1,7 +1,7 @@
 /**
  *   Copyright 2008, 2009 INRIA, Université Pierre Mendès France
  *   
- *   AverageLinkage.java is part of OntoSim.
+ *   MaximumSet.java is part of OntoSim.
  *
  *   OntoSim is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Lesser General Public License as published by
@@ -20,51 +20,54 @@
  */
 package fr.inrialpes.exmo.ontosim.set;
 
+
 import fr.inrialpes.exmo.ontosim.Measure;
-import fr.inrialpes.exmo.ontosim.extractor.DummyExtractor;
 
 /**
  *
  * @param <S>
  */
-public class AverageLinkage<S> extends SetMeasure<S> {
+@Deprecated
+public class MaximumSet<S> extends FullLinkage<S> {
 
+    public MaximumSet(Measure<S> lm) {
+	super(lm);
 
-	public AverageLinkage(Measure<S> m) {
-		super(m,new DummyExtractor());
-	}
-	
-	/*public double getMeasureValue(Set<? extends S> o1, Set<? extends S> o2) {
-		double sum=0;
-		Iterator<? extends S> i1 = o1.iterator();
-		while (i1.hasNext()) {
-			S elem1=i1.next();
-			Iterator<? extends S> i2 = o2.iterator();
-			while (i2.hasNext()){
-				S elem2=i2.next();
-				double sim = localMeasure.getMeasureValue(elem1,elem2);
-				sum += sim;
-			}
-		}
-		return sum/(o1.size()*o2.size());
+    }
+
+	/*public MaximumSet(Measure<S> m) {
+		super(m,new Max(),);
+
 	}
 
 	public double getDissim(Set<? extends S> o1, Set<? extends S> o2) {
-		return 1-getSim(o1,o2);
+		double max=0;
+		for (S e1 : o1) {
+			for (S e2 : o2) {
+				max = Math.max(max,this.localMeasure.getDissim(e1, e2));
+			}
+		}
+		return max;
+	}
+
+	public double getMeasureValue(Set<? extends S> o1, Set<? extends S> o2) {
+		double max=0;
+		for (S e1 : o1) {
+			for (S e2 : o2) {
+				max = Math.max(max,this.localMeasure.getMeasureValue(e1, e2));
+			}
+		}
+		return max;
 	}
 
 	public double getSim(Set<? extends S> o1, Set<? extends S> o2) {
-		double sum=0;
-		Iterator<? extends S> i1 = o1.iterator();
-		while (i1.hasNext()) {
-			S elem1=i1.next();
-			Iterator<? extends S> i2 = o2.iterator();
-			while (i2.hasNext()){
-				S elem2=i2.next();
-				double sim = localMeasure.getSim(elem1,elem2);
-				sum += sim;
+		double max=0;
+		for (S e1 : o1) {
+			for (S e2 : o2) {
+				max = Math.max(max,this.localMeasure.getSim(e1, e2));
 			}
 		}
-		return sum/(o1.size()*o2.size());
+		return max;
 	}*/
+
 }

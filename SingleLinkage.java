@@ -1,7 +1,7 @@
 /**
  *   Copyright 2008, 2009 INRIA, Université Pierre Mendès France
  *   
- *   FullLinkage.java is part of OntoSim.
+ *   SingleLinkage.java is part of OntoSim.
  *
  *   OntoSim is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Lesser General Public License as published by
@@ -20,30 +20,29 @@
  */
 package fr.inrialpes.exmo.ontosim.set;
 
-
 import fr.inrialpes.exmo.ontosim.Measure;
 import fr.inrialpes.exmo.ontosim.aggregation.AggregationScheme;
 import fr.inrialpes.exmo.ontosim.aggregation.DummyAS;
-import fr.inrialpes.exmo.ontosim.extractor.Max;
+import fr.inrialpes.exmo.ontosim.extractor.Min;
 
 /**
  *
  * @param <S>
  */
-public class FullLinkage<S> extends SetMeasure<S> {
+public class SingleLinkage<S> extends SetMeasure<S> {
 
-    public FullLinkage(Measure<S> lm) {
-	super(lm,new Max(),AggregationScheme.getInstance(DummyAS.class));
+    public SingleLinkage(Measure<S> lm) {
+	super(lm,new Min(), AggregationScheme.getInstance(DummyAS.class));
     }
 
-    /*public double getDissim(Set<? extends S> o1, Set<? extends S> o2) {
+   /* public double getDissim(Set<? extends S> o1, Set<? extends S> o2) {
 	if (localMeasure.getMType() == TYPES.dissimilarity)
 	    return getMeasureValue(o1,o2);
 	return 1-getMeasureValue(o1,o2);
     }
 
     public double getMeasureValue(Set<? extends S> o1, Set<? extends S> o2) {
-	if (localMeasure.getMType() == TYPES.dissimilarity) {
+	if (localMeasure.getMType() == TYPES.similarity) {
 	    double max = Double.NEGATIVE_INFINITY;
 	    for (S m1 : o1) {
 		for (S m2 : o2) {
@@ -53,7 +52,7 @@ public class FullLinkage<S> extends SetMeasure<S> {
 	    }
 	    return max;
 	}
-	else if (localMeasure.getMType() == TYPES.similarity) {
+	else if (localMeasure.getMType() == TYPES.dissimilarity) {
 	    double min = Double.POSITIVE_INFINITY;
 	    for (S m1 : o1) {
 		for (S m2 : o2) {
@@ -72,5 +71,7 @@ public class FullLinkage<S> extends SetMeasure<S> {
 	    return getMeasureValue(o1,o2);
 	return 1-getMeasureValue(o1,o2);
     }*/
+
+
 
 }

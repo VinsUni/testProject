@@ -1,7 +1,7 @@
 /**
  *   Copyright 2008, 2009 INRIA, Université Pierre Mendès France
  *   
- *   NoAlignmentException.java is part of OntoSim.
+ *   MatrixDoubleArray.java is part of OntoSim.
  *
  *   OntoSim is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Lesser General Public License as published by
@@ -18,30 +18,36 @@
  *   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  *
  */
-package fr.inrialpes.exmo.ontosim;
+package fr.inrialpes.exmo.ontosim.util.matrix;
 
-import fr.inrialpes.exmo.ontowrap.Ontology;
+import java.util.List;
 
 /**
- *  class NoAlignmentException
+ *
+ * @param <R>
+ * @param <C>
  */
-public class NoAlignmentException extends OntoSimException {
+public class MatrixDoubleArray<R,C> {
 
-    private static final long serialVersionUID = 1L;
-	protected Ontology<?> o1;
-	protected Ontology<?> o2;
+    private double[][] values;
+    private List<R> rows;
+    private List<C> cols;
 
-	public NoAlignmentException(Ontology<?> o1, Ontology<?> o2, Exception cause){
-		super("No alignment between "+o1.getURI()+" and "+o2.getURI(),cause);
-		this.o1=o1;
-		this.o2=o2;
-	}
+    public MatrixDoubleArray(List<R> r, List<C> c, double[][] vals) {
+	rows=r;
+	cols=c;
+	values=vals;
+    }
 
-	public NoAlignmentException(Ontology<?> o1, Ontology<?> o2){
-		super("No alignment between "+o1.getURI()+" and "+o2.getURI());
-		this.o1=o1;
-		this.o2=o2;
-	}
+    public double[][] getValues() {
+	return values;
+    }
 
+    public List<R> getRows() {
+	return rows;
+    }
 
+    public List<C> getCols() {
+	return cols;
+    }
 }
