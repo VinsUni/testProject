@@ -20,6 +20,10 @@
  */
 package fr.inrialpes.exmo.ontosim;
 
+/**
+ *
+ * @param <O>
+ */
 public interface Measure<O> {
 	static enum TYPES {similarity, dissimilarity, distance, other};
 	

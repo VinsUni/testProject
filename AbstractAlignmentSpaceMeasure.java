@@ -20,20 +20,23 @@
  */
 package fr.inrialpes.exmo.ontosim.align;
 
+import fr.inrialpes.exmo.align.impl.BasicOntologyNetwork;
+import fr.inrialpes.exmo.ontosim.AlignmentSpaceMeasure;
+import fr.inrialpes.exmo.ontowrap.Ontology;
+import org.semanticweb.owl.align.Alignment;
+import org.semanticweb.owl.align.AlignmentException;
+import org.semanticweb.owl.align.OntologyNetwork;
+
 import java.net.URI;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.semanticweb.owl.align.Alignment;
-import org.semanticweb.owl.align.AlignmentException;
-import org.semanticweb.owl.align.OntologyNetwork;
-
-import fr.inrialpes.exmo.align.impl.BasicOntologyNetwork;
-import fr.inrialpes.exmo.ontosim.AlignmentSpaceMeasure;
-import fr.inrialpes.exmo.ontowrap.Ontology;
-
+/**
+ *
+ * @param <S>
+ */
 public abstract class AbstractAlignmentSpaceMeasure<S> implements AlignmentSpaceMeasure<S> {
 
     protected OntologyNetwork network;

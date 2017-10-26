@@ -20,6 +20,9 @@
  */
 package fr.inrialpes.exmo.ontosim;
 
+/**
+ * class OntoSimException
+ */
 public class OntoSimException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;

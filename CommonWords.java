@@ -39,7 +39,9 @@ import org.apache.lucene.util.Version;
 
 import fr.inrialpes.exmo.ontosim.Measure;
 
-
+/**
+ * class CommonWords
+ */
 public class CommonWords implements Measure<String> {
 
     private Analyzer analyzer = new SnowballAnalyzer(Version.LUCENE_30,"English",StopAnalyzer.ENGLISH_STOP_WORDS_SET);
