@@ -19,10 +19,13 @@ import eu.sealsproject.omt.ws.matcher.AlignmentWS;
 
 import org.semanticweb.owl.align.Cell;
 
-
-@WebService(endpointInterface="eu.sealsproject.omt.ws.matcher.AlignmentWS")
 /**
- * Class MyAlignmentWS
+ * @WebService
+ */
+@WebService(endpointInterface="eu.sealsproject.omt.ws.matcher.AlignmentWS")
+
+/**
+ * class MyAlignmentWS extends MyAlignment
  */
 public class MyAlignmentWS extends MyAlignment implements AlignmentWS {
 

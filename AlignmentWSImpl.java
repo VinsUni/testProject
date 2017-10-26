@@ -15,6 +15,9 @@ import org.semanticweb.owl.align.AlignmentVisitor;
 
 import fr.inrialpes.exmo.align.impl.renderer.RDFRendererVisitor;
 
+/**
+ * WebService
+ */
 @WebService(endpointInterface="eu.sealsproject.omt.ws.matcher.AlignmentWS")
 /**
  * Class AlignmentWSImpl
