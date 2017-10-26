@@ -23,7 +23,7 @@ package fr.inrialpes.exmo.align.service;
 import java.util.Properties;
 
 /**
- *
+ * Interface AlignmentServiceProfile()
  */
 public interface AlignmentServiceProfile {
 
